@@ -1,6 +1,6 @@
 const {expect}=require('chai')
-const {batteryIsOk}=require('\bms-monitor.js')
 const range=require('\limitsManual.js')
+const {batteryIsOk}=require('\bms-monitor.js')
 
 //thermal check
 expect(batteryIsOk(-10, 70, 0.7,range)).to.be.false;
