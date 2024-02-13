@@ -1,5 +1,5 @@
 const {expect}=require('chai')
-const range = require('./limitsManual.js');
+const {range} = require('./limitsManual.js');
 const {batteryIsOk}=require('./bms-monitor.js')
 
 //thermal check
