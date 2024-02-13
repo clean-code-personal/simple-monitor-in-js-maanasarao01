@@ -12,4 +12,4 @@ function batteryIsOk(temperature, soc, charge_rate) {
     return true;
 }
 
-module.exports={ batteryIsOK}
+module.exports={ batteryIsOk}
