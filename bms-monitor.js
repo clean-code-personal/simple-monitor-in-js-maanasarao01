@@ -5,6 +5,7 @@ function rangeState(inputParameter,rangeParameter){
 }
 
 function checkBatteryCondition(batteryCondition){
+    console.log( batteryCondition? 'Battery is GOOD:)\n': 'Battery is RISKY:( \tAttention needed!\n\n' )
     return batteryCondition;
 }
 
@@ -23,10 +24,7 @@ function batteryIsOk(temperature, stateOfCharge, charge_rate,range) {
     printMishap(stateOfChargeRange,'State Of Charge')
     printMishap(chargeRateRange,'Charge Rate')
         
-    const batteryCondition = checkBatteryCondition(temperatureRange && stateOfChargeRange && chargeRateRange) 
-    console.log( batteryCondition? 'Battery is GOOD:)\n': 'Battery is RISKY:( \tAttention needed!\n\n' )
-    
-    return batteryCondition
+     return checkBatteryCondition(temperatureRange && stateOfChargeRange && chargeRateRange) 
 
 }
 
