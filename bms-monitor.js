@@ -1,4 +1,4 @@
-//const range=require('\limitsManual.js');
+const range=require('\limitsManual.js');
 
 //This function will return a boolean value based on the range state
 //It will return true only if the inputParameter is in specified range
