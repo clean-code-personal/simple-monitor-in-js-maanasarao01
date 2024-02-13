@@ -1,5 +1,3 @@
-const {expect} = require('chai');
-
 function batteryIsOk(temperature, soc, charge_rate) {
     if (temperature < 0 || temperature > 45) {
         console.log('Temperature is out of range!');
