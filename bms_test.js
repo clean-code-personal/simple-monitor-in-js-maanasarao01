@@ -2,17 +2,22 @@ const {expect}=require('chai')
 const {range} = require('./limitsManual.js');
 const {batteryIsOk}=require('./bms-monitor.js')
 
-//thermal check
-expect(batteryIsOk(-10, 70, 0.7,range)).to.be.false;
-expect(batteryIsOk(50, 70, 0.5,range)).to.be.false;
-//stateOfCharge error
-expect(batteryIsOk(10, 10, 0.4,range)).to.be.false;
-expect(batteryIsOk(30, 81, 0.7,range)).to.be.false;
-//chargeRate check
-expect(batteryIsOk(40, 78, -2,range)).to.be.false;
-expect(batteryIsOk(25, 50, 0.85,range)).to.be.false;
+describe('Battery Monitoring System', function() {
+    it('should return false for out of range parameters', function() {
+        //thermal check
+        expect(batteryIsOk(-10, 70, 0.7, range)).to.be.false;
+        expect(batteryIsOk(50, 70, 0.5, range)).to.be.false;
+        //stateOfCharge error
+        expect(batteryIsOk(10, 10, 0.4, range)).to.be.false;
+        expect(batteryIsOk(30, 81, 0.7, range)).to.be.false;
+        //chargeRate check
+        expect(batteryIsOk(40, 78, -2, range)).to.be.false;
+        expect(batteryIsOk(25, 50, 0.85, range)).to.be.false;
+    });
 
-//All Is Ok check
-expect(batteryIsOk(25, 70, 0.7,range)).to.be.true;
-expect(batteryIsOk(10, 20, 0.7,range)).to.be.true;
+    it('should return true for within range parameters', function() {
+        expect(batteryIsOk(25, 70, 0.7, range)).to.be.true;
+        expect(batteryIsOk(10, 20, 0.7, range)).to.be.true;
+    });
+});
 
