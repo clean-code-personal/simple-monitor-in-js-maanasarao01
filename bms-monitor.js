@@ -4,23 +4,20 @@ function parameterIsInRange(inputParameter,rangeParameter){
     return inputParameter>=rangeParameter.low && inputParameter<=rangeParameter.high
 }
 
-function checkTolerance(parameterIsInRange) {
+function checkTolerance(inputParameter,rangeParameter) {
     return function() {
-        const tolerance = rangeParameter.tolerance; // Using rangeParameter here
-        return inputParameter >= rangeParameter.high - tolerance && inputParameter <= rangeParameter.high ? 'peak' :
-            inputParameter >= rangeParameter.low && inputParameter <= rangeParameter.low + tolerance ? 'discharge' :
+        return inputParameter >= rangeParameter.high - rangeParameter.tolerance && inputParameter <= rangeParameter.high ? 'peak' :
+            inputParameter >= rangeParameter.low && inputParameter <= rangeParameter.low + rangeParameter.tolerance ? 'discharge' :
             'all is well';
     };
 }
 
-function printMishap(parameterState, mishapParameter) {
-    const toleranceLevel = checkTolerance(parameterIsInRange)();
-    const message = parameterState ?
-        (toleranceLevel === 'peak' ? `${mishapParameter} is approaching Peak value[!]` :
-            toleranceLevel === 'discharge' ? `${mishapParameter} is approaching discharge[!]` :
+function printMishap(parameterState, mishapParameter,tolerenceLevel) {
+    console.log(parameterState ?
+        (toleranceLevel() === 'peak' ? `${mishapParameter} is approaching Peak value[!]` :
+            toleranceLevel() === 'discharge' ? `${mishapParameter} is approaching discharge[!]` :
                 `${mishapParameter} is good`) :
-        `${mishapParameter} is out of Range:(`;
-    console.log(message);
+        `${mishapParameter} is out of Range:(`);
 }
 
 function batteryIsOk(temperature, stateOfCharge, charge_rate, range) {
@@ -29,13 +26,13 @@ function batteryIsOk(temperature, stateOfCharge, charge_rate, range) {
     const chargeRateIsOk = parameterIsInRange(charge_rate, range.chargeRate);
 
     // Create functions that capture the current state of temperature, stateOfCharge, and charge_rate
-    const temperatureCheckTolerance = checkTolerance(parameterIsInRange);
-    const stateOfChargeCheckTolerance = checkTolerance(parameterIsInRange);
-    const chargeRateCheckTolerance = checkTolerance(parameterIsInRange);
+    const temperatureCheckTolerance = checkTolerance(temperature, range.temperature);
+    const stateOfChargeCheckTolerance = checkTolerance(temperature, range.temperature);
+    const chargeRateCheckTolerance = checkTolerance(temperature, range.temperature);
 
-    printMishap(temperatureIsOk, 'Temperature');
-    printMishap(stateOfChargeIsOk, 'State Of Charge');
-    printMishap(chargeRateIsOk, 'Charge Rate');
+    printMishap(temperatureIsOk, 'Temperature',temperatureCheckTolerance);
+    printMishap(stateOfChargeIsOk, 'State Of Charge',stateOfChargeCheckTolerance);
+    printMishap(chargeRateIsOk, 'Charge Rate',chargeRateCheckTolerance);
 
     return checkBatteryCondition(temperatureIsOk && stateOfChargeIsOk && chargeRateIsOk);
 }
