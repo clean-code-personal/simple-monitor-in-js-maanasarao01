@@ -12,11 +12,10 @@ function checkTolerance(inputParameter,rangeParameter) {
 }
 
 function printMishap(parameterState, mishapParameter,tolerenceLevel) {
-    console.log(parameterState ?
-        (toleranceLevel() === 'peak' ? `${mishapParameter} is approaching Peak value[!]` :
-            toleranceLevel() === 'discharge' ? `${mishapParameter} is approaching discharge[!]` :
-                `${mishapParameter} is good`) :
-        `${mishapParameter} is out of Range:(`);
+    console.log(!parameterState?`${mishapParameter} is out of Range:(`:
+        toleranceLevel === 'peak' ? `${mishapParameter} is approaching Peak value[!]` :
+            toleranceLevel === 'discharge' ? `${mishapParameter} is approaching discharge[!]` :
+                `${mishapParameter} is good`) ;
 }
 
 function batteryIsOk(temperature, stateOfCharge, charge_rate, range) {
