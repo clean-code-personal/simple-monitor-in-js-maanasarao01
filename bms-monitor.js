@@ -12,7 +12,7 @@ function checkTolerance(inputParameter,rangeParameter) {
 }
 
 function printMishap(parameterState, mishapParameter,tolerenceLevel) {
-    console.log(parameterState?:
+    console.log(parameterState?
         toleranceLevel === 'peak'? `${mishapParameter} is approaching Peak value[!]` :
             toleranceLevel === 'discharge' ? `${mishapParameter} is approaching discharge[!]` :`${mishapParameter} is out of Range:(` ;
 }
