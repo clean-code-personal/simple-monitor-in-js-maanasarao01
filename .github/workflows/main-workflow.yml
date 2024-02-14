@@ -17,4 +17,4 @@ jobs:
         run:  sudo npm install
 
       - name: BMS Test
-        run: "node bms_test.js"
+        run: npx mocha bms_test.js
