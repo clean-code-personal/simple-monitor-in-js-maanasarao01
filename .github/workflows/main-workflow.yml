@@ -15,9 +15,6 @@ jobs:
 
       - name: Install Dependncies
         run:  sudo npm install
-      
-      - name: BMS monitor
-        run: "node bms-monitor.js"
 
       - name: BMS Test
         run: "node bms_test.js"
