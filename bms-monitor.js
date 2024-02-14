@@ -4,13 +4,18 @@ function parameterIsInRange(inputParameter,rangeParameter){
     return inputParameter>=rangeParameter.low && inputParameter<=rangeParameter.high
 }
 
+function checkTolerance(parameterIsInRange){
+    const tolerance=rangeParameter.tolerance
+    return inputParameter>=rangeParameter.high-tolerance && inputParameter<=rangeParameter.high?'peak':inputParameter>=rangeParameter.low && inputParameter<=rangeParameter.low+tolerance?'discharge':'all is well'
+}
+
 function checkBatteryCondition(batteryCondition){
     console.log( batteryCondition? 'Battery is GOOD:)\n': 'Battery is RISKY:( \tAttention needed!\n\n' )
     return batteryCondition;
 }
 
 function printMishap(parameterState,mishapParameter){
-    message = parameterState? mishapParameter+' is good': mishapParameter+' is out of Range:(';
+    message = parameterState? (checkTolerance(parameterIsInRange)=='peak'?mishapParameter+' is approaching Peak value[!]':checkTolerance(parameterIsInRange)=='dicharge'?mishapParameter+' is approaching discharge[!]':mishapParameter+' is good'): mishapParameter+' is out of Range:(';
     console.log(message)
 }
 
