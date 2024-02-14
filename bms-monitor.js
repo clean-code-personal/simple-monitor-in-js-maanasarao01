@@ -5,13 +5,10 @@ function parameterIsInRange(inputParameter,rangeParameter){
 }
 
 function checkTolerance(inputParameter,rangeParameter) {
-    return function() {
-        if(parameterIsInRange){
-            if(inputParameter >= rangeParameter.high - rangeParameter.tolerance)
-                return 'peak'
-            if(inputParameter <= rangeParameter.low + rangeParameter.tolerance)
-                return 'discharge'
-        }
+     if(parameterIsInRange && inputParameter >= rangeParameter.high - rangeParameter.tolerance)
+         return 'peak'
+     if(parameterIsInRange && inputParameter <= rangeParameter.low + rangeParameter.tolerance)
+         return 'discharge'
 }
 
 function printMishap(parameterState, mishapParameter,tolerenceLevel) {
