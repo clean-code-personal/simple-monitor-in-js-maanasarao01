@@ -1,6 +1,6 @@
 const {expect}=require('chai')
-const {range} = require('./limitsManual.js');
-const {batteryIsOk}=require('./bms-monitor.js')
+const {range} = require('production_code/limitsManual.js');
+const {batteryIsOk}=require('production_code/bms-monitor.js')
 
 describe('Battery Monitoring System', function() {
     it('should return false for out of range parameters', function() {
