@@ -36,9 +36,9 @@ function batteryIsOk(temperature, stateOfCharge, charge_rate, language, range) {
     const stateOfChargeTolerance = checkTolerance(temperature, range.temperature);
     const chargeRateTolerance = checkTolerance(temperature, range.temperature);
 
-    printMishap(temperatureIsOk, 'Temperature',temperatureTolerance,language);
-    printMishap(stateOfChargeIsOk, 'State Of Charge',stateOfChargeTolerance,language);
-    printMishap(chargeRateIsOk, 'Charge Rate',chargeRateTolerance,language);
+    printMishap(temperatureIsOk, 'temperature',temperatureTolerance,language);
+    printMishap(stateOfChargeIsOk, 'soc',stateOfChargeTolerance,language);
+    printMishap(chargeRateIsOk, 'chargeRate',chargeRateTolerance,language);
 
     return checkBatteryCondition(temperatureIsOk && stateOfChargeIsOk && chargeRateIsOk);
 }
