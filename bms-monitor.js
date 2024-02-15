@@ -7,10 +7,10 @@ function parameterIsInRange(inputParameter,rangeParameter){
 function checkTolerance(inputParameter, rangeParameter) {
     const peakThreshold = rangeParameter.high - rangeParameter.tolerance;
     const dischargeThreshold = rangeParameter.low + rangeParameter.tolerance;
-    if(parameterIsInRange){
+    
     return inputParameter >= peakThreshold?' is approaching peak[!]':
         inputParameter <= dischargeThreshold?' is approaching discharge[!]':' IS OK :)'
-    }
+    
 }
 
 
