@@ -1,3 +1,4 @@
+let riskyParameter=''
 //This function will return a boolean value based on the range state
 //It will return true only if the inputParameter is in specified range
 function parameterIsInRange(inputParameter,rangeParameter){
@@ -19,6 +20,7 @@ function checkBatteryCondition(batteryCondition){
 }
 
 function printMishap(parameterState, mishapParameter,tolerenceLevel) {
+    riskyParameter=mishapParameter
     console.log(!parameterState?`${mishapParameter} is out of Range:(`: mishapParameter+tolerenceLevel)
 }
 
@@ -39,4 +41,4 @@ function batteryIsOk(temperature, stateOfCharge, charge_rate, range) {
     return checkBatteryCondition(temperatureIsOk && stateOfChargeIsOk && chargeRateIsOk);
 }
 
-module.exports = { batteryIsOk };
+module.exports = { batteryIsOk, riskyParameter };
