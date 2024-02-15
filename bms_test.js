@@ -8,11 +8,11 @@ describe('Battery Monitoring System', function() {
         expect(batteryIsOk(-10, 70, 0.7, range,'kannada')).to.be.false;
         expect(batteryIsOk(50, 70, 0.5, range,'english')).to.be.false;
         //stateOfCharge error
-        expect(batteryIsOk(43, 10, 0.4, range,'english')).to.be.false;
+        expect(batteryIsOk(43, 10, 0.4, range,'german')).to.be.false;
         expect(batteryIsOk(30, 81, 0.6, range,'hindi')).to.be.false;
         //chargeRate check
         expect(batteryIsOk(40, 78, -2, range,'spanish')).to.be.false;
-        expect(batteryIsOk(25, 50, 0.85, range,'german')).to.be.false;
+        expect(batteryIsOk(25, 50, 0.85, range,'hindi')).to.be.false;
     });
 
     it('should return true for within range parameters', function() {
