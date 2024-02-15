@@ -12,7 +12,6 @@ function checkTolerance(inputParameter, rangeParameter) {
     
     return inputParameter >= peakThreshold?'peak':
         inputParameter <= dischargeThreshold?'discharge':'allOk'
-    
 }
 
 
@@ -22,7 +21,7 @@ function checkBatteryCondition(batteryCondition){
 
 function printMishap(parameterState, mishapParameter,tolerenceLevel,language) {
     const riskyParameter=inputParameters[language][mishapParameter]
-    const alertMessage=languages[language][tolerencelevel]
+    const alertMessage=languages[language][tolerenceLevel]
     console.log(!parameterState?riskyParameter+languages[language].notOk: riskyParameter+alertMessage)
 }
 
