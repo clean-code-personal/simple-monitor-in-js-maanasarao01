@@ -8,8 +8,8 @@ function checkTolerance(inputParameter, rangeParameter) {
     const peakThreshold = rangeParameter.high - rangeParameter.tolerance;
     const dischargeThreshold = rangeParameter.low + rangeParameter.tolerance;
     
-    return inputParameter >= peakThreshold?' is approaching peak[!]':
-        inputParameter <= dischargeThreshold?' is approaching discharge[!]':' IS OK :)'
+    return inputParameter >= peakThreshold?' is approaching peak [!]':
+        inputParameter <= dischargeThreshold?' is approaching discharge [!]':' IS OK :)'
     
 }
 
