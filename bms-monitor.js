@@ -5,12 +5,19 @@ function parameterIsInRange(inputParameter,rangeParameter){
 }
 
 function checkTolerance(inputParameter, rangeParameter) {
-    return (parameterIsInRange &&
-        ((inputParameter >= rangeParameter.high - rangeParameter.tolerance) ? 'is approaching peak[!]' :
-         (inputParameter <= rangeParameter.low + rangeParameter.tolerance) ? 'is approaching discharge[!]' :
-         'IS OK :)')
-    )
+    const isApproachingPeak = parameterIsInRange && inputParameter >= rangeParameter.high - rangeParameter.tolerance;
+    const isApproachingDischarge = parameterIsInRange && inputParameter <= rangeParameter.low + rangeParameter.tolerance;
+
+    return isApproachingPeak?'is approaching peak[!]':isApproachingDicharge?'is approaching discharge[!]':'IS OK :)'
+  /*  if (isApproachingPeak) {
+        return 'is approaching peak[!]';
+    } else if (isApproachingDischarge) {
+        return 'is approaching discharge[!]';
+    } else {
+        return 'IS OK :)';
+    }*/
 }
+
 
 function checkBatteryCondition(batteryCondition){
     return batteryCondition
@@ -18,8 +25,6 @@ function checkBatteryCondition(batteryCondition){
 
 function printMishap(parameterState, mishapParameter,tolerenceLevel) {
     console.log(!parameterState?`${mishapParameter} is out of Range:(`: mishapParameter+tolerenceLevel)
- /*   console.log(tolerenceLevel === 'peak'? `${mishapParameter} is approaching Peak value[!]` :
-            tolerenceLevel === 'discharge' ? `${mishapParameter} is approaching discharge[!]` :`${mishapParameter} is out of Range:(`)*/
 }
 
 function batteryIsOk(temperature, stateOfCharge, charge_rate, range) {
