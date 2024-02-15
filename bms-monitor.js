@@ -5,17 +5,12 @@ function parameterIsInRange(inputParameter,rangeParameter){
 }
 
 function checkTolerance(inputParameter, rangeParameter) {
-    const isApproachingPeak = parameterIsInRange && inputParameter >= rangeParameter.high - rangeParameter.tolerance;
-    const isApproachingDischarge = parameterIsInRange && inputParameter <= rangeParameter.low + rangeParameter.tolerance;
-
-    return isApproachingPeak?'is approaching peak[!]':isApproachingDicharge?'is approaching discharge[!]':'IS OK :)'
-  /*  if (isApproachingPeak) {
-        return 'is approaching peak[!]';
-    } else if (isApproachingDischarge) {
-        return 'is approaching discharge[!]';
-    } else {
-        return 'IS OK :)';
-    }*/
+    const peakThreshold = rangeParameter.high - rangeParameter.tolerance;
+    const dischargeThreshold = rangeParameter.low + rangeParameter.tolerance;
+    if(parameterIsInRange){
+    return inputParameter >= peakThreshold?' is approaching peak[!]':
+        inputParameter <= dischargeThreshold?' is approaching discharge[!]':' IS OK :)'
+    }
 }
 
 
