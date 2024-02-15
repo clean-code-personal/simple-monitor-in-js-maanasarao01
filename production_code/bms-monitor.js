@@ -21,9 +21,9 @@ function checkBatteryCondition(batteryCondition){
 }
 
 function printMishap(parameterState, mishapParameter,tolerenceLevel,language) {
-    const riskyParameter=inputParameters.language[mishapParameter]
-    const alertMessage=languages.language[tolerencelevel]
-    console.log(!parameterState?riskyParameter+languages.language.notOk: riskyParameter+alertMessage)
+    const riskyParameter=inputParameters[language][mishapParameter]
+    const alertMessage=languages[language][tolerencelevel]
+    console.log(!parameterState?riskyParameter+languages[language].notOk: riskyParameter+alertMessage)
 }
 
 function batteryIsOk(temperature, stateOfCharge, charge_rate, range,language) {
