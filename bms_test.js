@@ -8,15 +8,16 @@ describe('Battery Monitoring System', function() {
         expect(batteryIsOk(-10, 70, 0.7, range)).to.be.false;
         expect(batteryIsOk(50, 70, 0.5, range)).to.be.false;
         //stateOfCharge error
-        expect(batteryIsOk(10, 10, 0.4, range)).to.be.false;
-        expect(batteryIsOk(30, 81, 0.7, range)).to.be.false;
+        expect(batteryIsOk(43, 10, 0.4, range)).to.be.false;
+        expect(batteryIsOk(30, 81, 0.6, range)).to.be.false;
         //chargeRate check
         expect(batteryIsOk(40, 78, -2, range)).to.be.false;
         expect(batteryIsOk(25, 50, 0.85, range)).to.be.false;
     });
 
     it('should return true for within range parameters', function() {
-        expect(batteryIsOk(25, 70, 0.7, range)).to.be.true;
+        expect(batteryIsOk(2, 70, 0.7, range)).to.be.true;
+        expect(batteryIsOk(25, 76, 0.7, range)).to.be.true;
         expect(batteryIsOk(10, 20, 0.7, range)).to.be.true;
     });
 });
