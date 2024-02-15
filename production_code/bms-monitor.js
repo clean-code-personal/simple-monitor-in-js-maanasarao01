@@ -26,7 +26,7 @@ function printMishap(parameterState, mishapParameter,tolerenceLevel,language) {
     console.log(!parameterState?riskyParameter+languages.language.notOk: riskyParameter+alertMessage)
 }
 
-function batteryIsOk(temperature, stateOfCharge, charge_rate, language, range) {
+function batteryIsOk(temperature, stateOfCharge, charge_rate, range,language) {
     const temperatureIsOk = parameterIsInRange(temperature, range.temperature);
     const stateOfChargeIsOk = parameterIsInRange(stateOfCharge, range.stateOfCharge);
     const chargeRateIsOk = parameterIsInRange(charge_rate, range.chargeRate);
