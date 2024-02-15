@@ -41,7 +41,6 @@ const languages={
     notOk: "ist außerhalb des Bereichs :["
 },
  kannada:{
- {
     peak: "ಶಿಖರಕ್ಕೆ ಹತ್ತುತ್ತಿದೆ [!]",
     discharge:"ಬಿಡುಗಡೆಯ ಹಂತಕ್ಕೆ ಬರುತ್ತಿದೆ [!]",
     allOk: "ಸರಿಯಾಗಿದೆ",
@@ -52,7 +51,6 @@ hindi:{
     discharge: "छूटने के पास आ रहा है [!]",
     allOk: "ठीक है",
     notOk: "रेंज से बाहर है :["
-
 },
 spanish:{
     peak: "se acerca al pico [!]",
