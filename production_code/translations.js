@@ -6,19 +6,19 @@ const inputParameters={
   'chargeRate':"Charge Rate"
  },
 german:{
-  'temperature':"Temperatur",
-  'soc':"Ladezustand",
-  'chargeRate':"Ladegeschwindigkeit"
+  'temperature':"Temperatur ",
+  'soc':"Ladezustand ",
+  'chargeRate':"Ladegeschwindigkeit "
  },
 kannada:{
-  'temperature':"ತಾಪಮಾನ",
-  'soc':"ಚಾರ್ಜ್ ಸ್ಥಿತಿ",
-  'chargeRate':"ಚಾರ್ಜ್ ದರ"
+  'temperature':"ತಾಪಮಾನ ",
+  'soc':"ಚಾರ್ಜ್ ಸ್ಥಿತಿ ",
+  'chargeRate':"ಚಾರ್ಜ್ ದರ "
  },
  hindi:{
   'temperature':"तापमान ",
   'soc': "चार्ज की स्थिति ",
-  'chargeRate': "चार्ज दर" 
+  'chargeRate': "चार्ज दर " 
  },
  spanish:{
   'temperature':"Temperatura",
@@ -53,10 +53,10 @@ hindi:{
      notOk: "रेंज से बाहर है :["
 },
 spanish:{
-    'peak': "se acerca al pico [!]",
-    'discharge': "se acerca a la descarga [!]",
-    'allOk': "está bien",
-     notOk: "está fuera de rango :["
+    'peak': " se acerca al pico [!]",
+    'discharge': " se acerca a la descarga [!]",
+    'allOk': " está bien",
+     notOk: " está fuera de rango :["
 }
 }
 module.exports={inputParameters, languages}
