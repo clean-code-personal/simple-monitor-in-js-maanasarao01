@@ -1,4 +1,3 @@
-let riskyParameter=require('../bms-monitor.js')
 
 const inputParameters={
  english:{
@@ -28,42 +27,38 @@ kannada:{
  }
 }
 
-function notifyRiskyParameter(mishapParameter,language){
-  return inputParameters.language.mishapParameter
-}
-
 const languages={
  english:{
-    peak: riskyParameter+' is approaching peak [!]',
-    discharge: riskyParameter+' is approaching discharge [!]',
-    allOk: riskyParameter+' is Ok',
-    notOk: riskyParameter+' is out of range :['
+    peak: ' is approaching peak [!]',
+    discharge: ' is approaching discharge [!]',
+    allOk: ' is Ok',
+    notOk: ' is out of range :['
   },
  german:{
-    peak: riskyParameter+ "nähert sich dem Höhepunkt [!]",
-    discharge: riskyParameter+ "nähert sich der Entladung [!]",
-    allOk: riskyParameter+"ist in Ordnung",
-    notOk: riskyParameter+"ist außerhalb des Bereichs :["
+    peak:"nähert sich dem Höhepunkt [!]",
+    discharge: "nähert sich der Entladung [!]",
+    allOk: "ist in Ordnung",
+    notOk: "ist außerhalb des Bereichs :["
 },
  kannada:{
  {
-    peak: riskyParameter+"ಶಿಖರಕ್ಕೆ ಹತ್ತುತ್ತಿದೆ [!]",
-    discharge:riskyParameter+"ಬಿಡುಗಡೆಯ ಹಂತಕ್ಕೆ ಬರುತ್ತಿದೆ [!]",
-    allOk: riskyParameter+"ಸರಿಯಾಗಿದೆ",
-    notOk: riskyParameter+"ಬಿಗಿಯಾಗಿದೆ :["
+    peak: "ಶಿಖರಕ್ಕೆ ಹತ್ತುತ್ತಿದೆ [!]",
+    discharge:"ಬಿಡುಗಡೆಯ ಹಂತಕ್ಕೆ ಬರುತ್ತಿದೆ [!]",
+    allOk: "ಸರಿಯಾಗಿದೆ",
+    notOk: "ಬಿಗಿಯಾಗಿದೆ :["
  },
 hindi:{
-    peak: riskyParameter+"शिखर के पास आ रहा है [!]",
-    discharge: riskyParameter+"छूटने के पास आ रहा है [!]",
-    allOk: riskyParameter+"ठीक है",
-    notOk: riskyParameter+"रेंज से बाहर है :["
+    peak: "शिखर के पास आ रहा है [!]",
+    discharge: "छूटने के पास आ रहा है [!]",
+    allOk: "ठीक है",
+    notOk: "रेंज से बाहर है :["
 
 },
 spanish:{
-    peak: riskyParameter+"se acerca al pico [!]",
-    discharge: riskyParameter+"se acerca a la descarga [!]",
-    allOk: riskyParameter+"está bien",
-    notOk: riskyParameter+"está fuera de rango :["
+    peak: "se acerca al pico [!]",
+    discharge: "se acerca a la descarga [!]",
+    allOk: "está bien",
+    notOk: "está fuera de rango :["
 }
 }
-module.exports={languages,notifyRiskyParameter}
+module.exports={inputParameters, languages}
