@@ -9,7 +9,7 @@ function checkTolerance(inputParameter,rangeParameter) {
      if(parameterIsInRange && inputParameter <= rangeParameter.low + rangeParameter.tolerance) return 'discharge'
 }
 
-function checkBatteryCondition(battryCondition){
+function checkBatteryCondition(batteryCondition){
     return batteryCondition
 }
 
