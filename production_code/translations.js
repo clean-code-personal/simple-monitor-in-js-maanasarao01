@@ -1,4 +1,4 @@
-const mishapParameter,language=require('../bms-monitor.js)
+let riskyParameter=require('../bms-monitor.js')
 
 const inputParameters={
  english:{
@@ -28,11 +28,9 @@ kannada:{
  }
 }
 
-function notifyRiskyParameter(){
+function notifyRiskyParameter(mishapParameter,language){
   return inputParameters.language.mishapParameter
 }
-
-const riskyParameter=notifyRiskyParameter();
 
 const languages={
  english:{
@@ -68,4 +66,4 @@ spanish:{
     notOk: riskyParameter+"está fuera de rango :["
 }
 }
-module.exports={languages}
+module.exports={languages,notifyRiskyParameter}
