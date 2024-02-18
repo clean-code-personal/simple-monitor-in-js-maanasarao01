@@ -24,13 +24,13 @@ kannada:{
   'temperature':"Temperatura",
   'soc': "Estado de carga",
   'chargeRate': "Tasa de carga" 
- },
- //adding a mistake
+ }
+ /*adding a mistake
   french: {
   'temperature': "Température",
   'soc': "État de charge",
   'chargeRate': ""//"Taux de charge"
- }
+ }*/
 }
 
 const languages={
@@ -64,11 +64,11 @@ spanish:{
     'allOk': " está bien",
      notOk: " está fuera de rango :["
 },
- french: {
+/* french: {
     'peak': "approche du pic [!]",
     'discharge': "approche de la décharge [!]",
     'allOk': "est correct",
     notOk: "est hors de portée :["
- }
+ }*/
 }
 module.exports={inputParameters, languages}
