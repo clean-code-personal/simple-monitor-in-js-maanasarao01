@@ -1,6 +1,28 @@
 const {expect}=require('chai')
 const {range} = require('./production_code/limitsManual.js');
 const {batteryIsOk}=require('./production_code/bms-monitor.js')
+const { inputParameters, languages } = require('./production_code/translations.js');
+
+describe('Trying to mistake-proof the contents in translations', function() {
+    // Existing tests for functionality
+    
+    it('should have translations for all keys in inputParameters for all languages', function() {
+        Object.keys(inputParameters).forEach(language => {
+            Object.keys(inputParameters[language]).forEach(key => {
+                expect(inputParameters[language][key]).to.be.a('string').that.is.not.empty;
+            });
+        });
+    });
+
+    it('should have translations for all keys in languages for all languages', function() {
+        Object.keys(languages).forEach(language => {
+            Object.keys(languages[language]).forEach(key => {
+                expect(languages[language][key]).to.be.a('string').that.is.not.empty;
+            });
+        });
+    });
+});
+
 
 describe('Battery Monitoring System', function() {
     it('should return false for out of range parameters', function() {
