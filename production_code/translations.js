@@ -23,13 +23,13 @@ kannada:{
  spanish:{
   'temperature':"Temperatura",
   'soc': "Estado de carga",
-  'chargeRate': "Tasa de carga" ,
+  'chargeRate': "Tasa de carga" 
  },
  //adding a mistake
   french: {
   'temperature': "Température",
   'soc': "État de charge",
-  'chargeRate': //"Taux de charge"
+  'chargeRate': ""//"Taux de charge"
  }
 }
 
